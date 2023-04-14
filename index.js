@@ -3,6 +3,7 @@ const express = require ("express");
 const { append } = require("express/lib/response");
 const aplication = express();
 const categoriesController = require("./Controller/CategoriesController");
+const articlesController = require("./Controller/ArticlesController");
 // Data Base
 const connection = require("./database/database");
 // View engine
@@ -16,6 +17,7 @@ aplication.get("/",(req,res) =>{
     res.render("index");
 });
 aplication.use("/",categoriesController);
+aplication.use("/",articlesController);
 //Server
 aplication.listen(8080, () =>{
     console.log("Servidor em execução!");
