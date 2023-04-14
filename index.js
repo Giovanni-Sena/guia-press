@@ -7,7 +7,7 @@ const articlesController = require("./Controller/ArticlesController");
 // Data Base
 const connection = require("./database/database");
 // View engine
-aplication.set('view engine','ejs');
+aplication.set("view engine","ejs");
 aplication.use(express.urlencoded({extended: false}));
 aplication.use(express.json());
 // Static 
