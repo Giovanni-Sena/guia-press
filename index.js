@@ -4,6 +4,8 @@ const { append } = require("express/lib/response");
 const aplication = express();
 const categoriesController = require("./Controller/CategoriesController");
 const articlesController = require("./Controller/ArticlesController");
+const Aeticle = require("./model/Article");
+const Category = require("./model/Category");
 // Data Base
 const connection = require("./database/database");
 // View engine
