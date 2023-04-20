@@ -20,8 +20,8 @@ const Article = connection.define('articles',{
     updatedAt: false
 })
 
-// Category.hasMany(Article); // 1<->N
-// Article.belongsTo(Category); // 1<->1
+Category.hasMany(Article); // 1<->N
+Article.belongsTo(Category); // 1<->1
 
 //Article.sync({force: true});
 
