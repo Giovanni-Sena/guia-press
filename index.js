@@ -8,6 +8,7 @@ const Aeticle = require("./model/Article");
 const Category = require("./model/Category");
 // Data Base
 const connection = require("./database/database");
+const Article = require("./model/Article");
 // View engine
 aplication.set("view engine","ejs");
 aplication.use(express.urlencoded({extended: false}));
@@ -16,7 +17,9 @@ aplication.use(express.json());
 aplication.use(express.static('public'));
 // Routes
 aplication.get("/",(req,res) =>{
-    res.render("index");
+    Article.findAll().then(articles =>{
+        res.render("index",{articles: articles});
+    });
 });
 aplication.use("/",categoriesController);
 aplication.use("/",articlesController);
